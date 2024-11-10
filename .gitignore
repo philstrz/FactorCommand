@@ -1,2 +1,2 @@
 # Ignore uistate
-.uistate.json
+*.uistate.json
