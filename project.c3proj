@@ -1,7 +1,7 @@
 {
 	"projectFormatVersion": 1,
 	"savedWithRelease": 40702,
-	"name": "GameTemplate",
+	"name": "FactorCommand",
 	"runtime": "c3",
 	"useWorker": "auto",
 	"bundleAddons": false,
@@ -54,12 +54,21 @@
 			"name": "Tween",
 			"author": "Scirra",
 			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "scrollto",
+			"name": "Scroll To",
+			"author": "Scirra",
+			"bundled": false
 		}
 	],
 	"uniqueId": "7b2hqbhiwmp",
 	"objectTypes": {
 		"items": [
-			"Audio"
+			"Audio",
+			"Launcher",
+			"Camera"
 		],
 		"subfolders": [
 			{
