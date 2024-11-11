@@ -8,7 +8,7 @@ runOnStartup(async runtime =>
 	// Code to run on the loading screen.
 	// Note layouts, objects etc. are not yet available.
 	
-	runtime.addEventListener("beforeprojectstart", () => OnBeforeProjectStart(runtime));
+	runtime.addEventListener("beforeprojectstart", () => onBeforeProjectStart(runtime));
 	
 	// Add viewport dimensions to globals
 	Globals.viewport.width = runtime.viewportWidth;
@@ -18,12 +18,12 @@ runOnStartup(async runtime =>
 	window.addEventListener("keydown", function(e) { if(["Space","ArrowUp","ArrowDown","ArrowLeft","ArrowRight"].indexOf(e.code) > -1) { e.preventDefault(); } }, false); 
 });
 
-async function OnBeforeProjectStart(runtime)
+async function onBeforeProjectStart(runtime)
 {
 	// Code to run just before 'On start of layout' on
 	// the first layout. Loading has finished and initial
 	// instances are created and available to use here.
-	runtime.addEventListener("tick", () => Tick(runtime));
+	runtime.addEventListener("tick", () => tick(runtime));
 	
 	// Get all layouts
 	for (const layout of runtime.getAllLayouts())
@@ -33,29 +33,47 @@ async function OnBeforeProjectStart(runtime)
 		if (layout.name === "Title") continue;
 		
 		// Add a function before every layout starts
-		layout.addEventListener("beforelayoutstart", ()=> OnBeforeLayoutStart(runtime));
+		layout.addEventListener("beforelayoutstart", ()=> onBeforeLayoutStart(runtime));
 
 		// Add a function at the start of every layout
-		layout.addEventListener("afterlayoutstart", ()=> OnLayoutStart(runtime));	
+		layout.addEventListener("afterlayoutstart", ()=> onLayoutStart(runtime));	
 
 	}
 	
+	// Handle mouse input
+	runtime.addEventListener("pointerdown", () => onPointerDown(runtime));
+	runtime.mouse.setCursorStyle("crosshair");
+	
+	// Handle keyboard input
+	runtime.addEventListener("keydown", e => onKeyDown(e, runtime));
 }
 
 // Every tick
-function Tick(runtime)
+function tick(runtime)
 {
 	
 }
 
 // Before the layout starts
-function OnBeforeLayoutStart(runtime)
+function onBeforeLayoutStart(runtime)
 {
 	
 }
 
 // When layout starts
-function OnLayoutStart(runtime)
+function onLayoutStart(runtime)
 {
 	
+}
+
+function onPointerDown(runtime)
+{
+	const [mouseX, mouseY] = runtime.mouse.getMousePosition(1);
+	
+	console.log(mouseX, mouseY);
+}
+
+function onKeyDown(e, runtime)
+{
+	console.log(e.code, e.key);
 }
