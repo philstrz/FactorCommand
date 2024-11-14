@@ -68,7 +68,9 @@
 		"items": [
 			"Audio",
 			"Launcher",
-			"Camera"
+			"Camera",
+			"Missile",
+			"Target"
 		],
 		"subfolders": [
 			{
@@ -110,7 +112,8 @@
 		"items": [
 			"Loader",
 			"Layout",
-			"Title"
+			"Title",
+			"Repository"
 		],
 		"subfolders": []
 	},
@@ -147,6 +150,14 @@
 					"sid": 748630613865371,
 					"script-info": {
 						"purpose": "imports-for-events"
+					}
+				},
+				{
+					"name": "missile.js",
+					"type": "application/javascript",
+					"sid": 866006197947427,
+					"script-info": {
+						"purpose": "none"
 					}
 				}
 			],

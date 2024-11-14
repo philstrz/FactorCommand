@@ -1,7 +1,5 @@
-
-// Import any other script files here, e.g.:
-// import * as myModule from "./mymodule.js";
 import Globals from "./globals.js";
+import Missile from "./missile.js";
 
 runOnStartup(async runtime =>
 {
@@ -16,6 +14,9 @@ runOnStartup(async runtime =>
 	
 	// Stop the browser from scrolling away
 	window.addEventListener("keydown", function(e) { if(["Space","ArrowUp","ArrowDown","ArrowLeft","ArrowRight"].indexOf(e.code) > -1) { e.preventDefault(); } }, false); 
+	
+	// Set custom classes for objects
+	runtime.objects.Missile.setInstanceClass(Missile);
 });
 
 async function onBeforeProjectStart(runtime)
@@ -71,9 +72,16 @@ function onPointerDown(runtime)
 	const [mouseX, mouseY] = runtime.mouse.getMousePosition(1);
 	
 	console.log(mouseX, mouseY);
+	launchMissile(runtime, mouseX, mouseY);
 }
 
 function onKeyDown(e, runtime)
 {
 	console.log(e.code, e.key);
+}
+
+function launchMissile(runtime, x, y)
+{
+	const missile = runtime.objects.Missile.createInstance("Player", 320, 280);
+	missile.setTarget(x, y);
 }
