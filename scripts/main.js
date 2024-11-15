@@ -1,5 +1,7 @@
 import Globals from "./globals.js";
 import Missile from "./missile.js";
+import Meteor from "./meteor.js";
+import Generator from "./generator.js";
 
 runOnStartup(async runtime =>
 {
@@ -17,6 +19,7 @@ runOnStartup(async runtime =>
 	
 	// Set custom classes for objects
 	runtime.objects.Missile.setInstanceClass(Missile);
+	runtime.objects.Meteor.setInstanceClass(Meteor);
 });
 
 async function onBeforeProjectStart(runtime)
@@ -52,7 +55,14 @@ async function onBeforeProjectStart(runtime)
 // Every tick
 function tick(runtime)
 {
-	
+	for (const missile of runtime.objects.Missile.getAllInstances())
+	{
+		missile.update();
+	}
+	if (generator)
+	{
+		generator.update();
+	}
 }
 
 // Before the layout starts
@@ -62,16 +72,17 @@ function onBeforeLayoutStart(runtime)
 }
 
 // When layout starts
+let generator = null;
 function onLayoutStart(runtime)
 {
-	
+	generator = new Generator(runtime);
+	generator.start();
 }
 
 function onPointerDown(runtime)
 {
 	const [mouseX, mouseY] = runtime.mouse.getMousePosition(1);
 	
-	console.log(mouseX, mouseY);
 	launchMissile(runtime, mouseX, mouseY);
 }
 

@@ -70,7 +70,8 @@
 			"Launcher",
 			"Camera",
 			"Missile",
-			"Target"
+			"Target",
+			"Meteor"
 		],
 		"subfolders": [
 			{
@@ -159,6 +160,22 @@
 					"script-info": {
 						"purpose": "none"
 					}
+				},
+				{
+					"name": "meteor.js",
+					"type": "application/javascript",
+					"sid": 930477250601172,
+					"script-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "generator.js",
+					"type": "application/javascript",
+					"sid": 417861684041058,
+					"script-info": {
+						"purpose": "none"
+					}
 				}
 			],
 			"subfolders": [
@@ -184,6 +201,22 @@
 							"name": "audioManager.js",
 							"type": "application/javascript",
 							"sid": 636519227842261,
+							"script-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "vector.js",
+							"type": "application/javascript",
+							"sid": 107545955068197,
+							"script-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "enum.js",
+							"type": "application/javascript",
+							"sid": 700199807267574,
 							"script-info": {
 								"purpose": "none"
 							}
@@ -364,5 +397,5 @@
 	},
 	"viewportWidth": 320,
 	"viewportHeight": 200,
-	"firstLayout": "Title"
+	"firstLayout": "Layout"
 }

@@ -12,27 +12,27 @@ function SetRuntime(rt)
 export default class Coroutine
 {
 	// Static used for most Coroutine logic
-	static List = {}
+	static list = {}
 	
 	// 
-	static Init(runtime)
+	static init(runtime)
 	{
 		// 
 		SetRuntime(runtime);
 		//
-		runtime.addEventListener("tick", () => Coroutine.Tick());
+		runtime.addEventListener("tick", () => Coroutine.tick());
 	}
 	
-	static Tick()
+	static tick()
 	{
-		for (const key in Coroutine.List)
+		for (const key in Coroutine.list)
 		{
-			Coroutine.List[key].tick();
+			Coroutine.list[key].tick();
 		}
 	}
 	
 	// Coroutine.Wait returns a new iterator function that's run in place of the waiting coroutine via "yield Coroutine.Wait(timeInSeconds)"
-	static Wait(time)
+	static wait(time)
 	{
 		return function*() {
 			let t = 0;
@@ -55,13 +55,13 @@ export default class Coroutine
 		// Give the coroutine a unique id
 		const string = id;
 		let i = 0;
-		while (Coroutine.List[id])
+		while (Coroutine.list[id])
 		{
 			id = string + i++;
 		}
 		
 		// Add to coroutines list
-		Coroutine.List[id] = this;
+		Coroutine.list[id] = this;
 		this.id = id;
 	}
 	
@@ -88,7 +88,7 @@ export default class Coroutine
 			}
 			else
 			{
-				delete Coroutine.List[this.id];
+				delete Coroutine.list[this.id];
 			}
 		}
 	}
