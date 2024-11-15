@@ -46,7 +46,7 @@ export default class Missile extends globalThis.InstanceType.Missile
 		const there = new Vector(this.target.x, this.target.y);
 		
 		const direction = Vector.difference(there, here);
-		const velocity = Vector.scale(direction.normalize(), speed);
+		const velocity = Vector.scale(direction.unit(), speed);
 		
 		this.x += this.runtime.dt * velocity.x;
 		this.y += this.runtime.dt * velocity.y;

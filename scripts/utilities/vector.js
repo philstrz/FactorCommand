@@ -25,7 +25,7 @@ export default class Vector
 		this.y = y;
 	}
 	
-	normalize()
+	unit()
 	{
 		const d2 = Vector.magnitudeSquared(this);
 		
