@@ -76,7 +76,9 @@ let generator = null;
 function onLayoutStart(runtime)
 {
 	generator = new Generator(runtime);
-	generator.start();
+	generator.nextWave();
+	generator.nextWave();
+	
 }
 
 function onPointerDown(runtime)
