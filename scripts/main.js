@@ -77,8 +77,6 @@ function onLayoutStart(runtime)
 {
 	generator = new Generator(runtime);
 	generator.nextWave();
-	generator.nextWave();
-	
 }
 
 function onPointerDown(runtime)

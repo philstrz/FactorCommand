@@ -8,19 +8,39 @@ let numbers = [];
 const State = enumerated([
 	"Paused",
 	"Starting",
-	"First",
-	"Second",
+	"Wave",
 	"Ending",
 ])
+
+const waveInterval = [2, 1, 0.5];
+const waveTime = [30, 50, 60];
+const stages = 3;
+
+let generator = null;
 
 export default class Generator
 {
 
 	state = State.Paused;
 	
+	// Two timers for launching and for the entire wave
+	launchTimer = waveInterval[0];
+	waveTimer = 0;
+	
+	// Each wave is broken up into stages
+	stage = 0;
+	
+	// Instantiate with runtime, store to class var
 	constructor(rt)
 	{
-		runtime = rt;
+		if (runtime === null)
+		{
+			runtime = rt;
+		}
+		if (generator === null)
+		{
+			generator = this;
+		}
 	}
 	
 	// Every tick, check state and proceed accordingly
@@ -34,16 +54,39 @@ export default class Generator
 			case State.Starting:
 				this.start();
 				break;
-			case State.First:
-				console.log("first");
-				break;
-			case State.Second:
-				console.log("second");
+			case State.Wave:
+				this.wave();
 				break;
 			case State.Ending:
 				console.log("ending");
 				break;
 		}
+	}
+	
+	// Wave by number
+	wave()
+	{
+		this.waveTimer += runtime.dt;
+		this.launchTimer -= runtime.dt;
+		if (this.launchTimer <= 0)
+		{
+			this.launchTimer = waveInterval[this.stage];
+			this.launch();
+		}
+		if (this.waveTimer >= waveTime[this.stage])
+		{
+			this.stage += 1;
+			if (this.stage >= stages)
+			{
+				this.state = State.Ending;
+			}
+		}
+	}
+	
+	// Launch a meteor
+	launch()
+	{
+		console.log("meteor!");
 	}
 	
 	// Start of the wave
@@ -53,18 +96,18 @@ export default class Generator
 		this.setNumbers();
 		console.log(numbers);
 		
-		// Move to next state, first half of wave
-		this.state = State.First;
+		// Move to next state
+		this.state = State.Wave;
 	}
 	
 	// External trigger to start the next wave
 	nextWave()
 	{
-		this.wave = wave + 1;
+		this.waveNumber = wave + 1;
 		this.state = State.Starting;
 	}
 	
-	// Numbers available for meteors is based on the wave number
+	// Numbers available for meteors are based on the wave number
 	setNumbers()
 	{
 		numbers = [];
@@ -78,7 +121,7 @@ export default class Generator
 		}
 	}
 	
-	set wave(n)
+	set waveNumber(n)
 	{
 		wave = n;
 	}
