@@ -6,6 +6,8 @@ const speed = 200;
 export default class Missile extends globalThis.InstanceType.Missile
 {
 
+	factor = 2;
+
 	constructor()
 	{
 		super();

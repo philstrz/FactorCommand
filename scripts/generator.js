@@ -1,4 +1,5 @@
 import enumerated from "./utilities/enum.js";
+import Random from "./utilities/random.js";
 
 let runtime = null;
 
@@ -87,6 +88,30 @@ export default class Generator
 	launch()
 	{
 		console.log("meteor!");
+		
+		// Start meteor anywhere along top
+		const x = 170 + Math.random() * 300;
+		const y = 100;
+		
+		// Point meteor at the bottom
+		const t = 170 + Math.random() * 300;
+		let theta = Math.atan2( 200, t - x );
+		console.log(theta * 180 / Math.PI);
+		
+		// Restrict theta within +/- 30 deg
+		theta = theta < (Math.PI / 3) ? Math.PI / 3 : theta;
+		theta = theta > (2 * Math.PI / 3) ? (2 * Math.PI) / 3 : theta;
+		
+		console.log(theta * 180 / Math.PI);
+		
+		// Pick a number based on available factors
+		const number = Random.choose(numbers, 1);
+		
+		// Create and set the meteor
+		const meteor = runtime.objects.Meteor.createInstance("Meteors", x, y);
+		meteor.Theta = theta;
+		meteor.Number = number;
+		
 	}
 	
 	// Start of the wave

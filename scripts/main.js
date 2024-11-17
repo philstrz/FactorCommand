@@ -59,6 +59,12 @@ function tick(runtime)
 	{
 		missile.update();
 	}
+	
+	for (const meteor of runtime.objects.Meteor.getAllInstances())
+	{
+		meteor.update();
+	}
+	
 	if (generator)
 	{
 		generator.update();

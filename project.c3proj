@@ -220,6 +220,14 @@
 							"script-info": {
 								"purpose": "none"
 							}
+						},
+						{
+							"name": "random.js",
+							"type": "application/javascript",
+							"sid": 935267635027168,
+							"script-info": {
+								"purpose": "none"
+							}
 						}
 					],
 					"subfolders": [],
