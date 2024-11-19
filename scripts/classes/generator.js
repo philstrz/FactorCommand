@@ -1,6 +1,6 @@
-import enumerated from "./utilities/enum.js";
-import Random from "./utilities/random.js";
-import {Dimensions} from "./globals.js";
+import enumerated from "../utilities/enum.js";
+import Random from "../utilities/random.js";
+import {Dimensions} from "../globals.js";
 
 let runtime = null;
 
@@ -43,6 +43,7 @@ export default class Generator
 		{
 			generator = this;
 		}
+		//return generator;
 	}
 	
 	// Every tick, check state and proceed accordingly
@@ -93,8 +94,8 @@ export default class Generator
 		const y = 0;
 		
 		// Point meteor at the bottom
-		const t = 170 + Math.random() * 300;
-		let theta = Math.atan2( 200, t - x );
+		const t = Dimensions.meteors.left + Math.random() * (Dimensions.meteors.right - Dimensions.meteors.left);
+		let theta = Math.atan2( Dimensions.meteors.bottom - Dimensions.meteors.top, t - x );
 		console.log(theta * 180 / Math.PI);
 		
 		// Restrict theta within +/- 30 deg

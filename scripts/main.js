@@ -1,7 +1,7 @@
 import {Dimensions} from "./globals.js";
-import Missile from "./missile.js";
-import Meteor from "./meteor.js";
-import Generator from "./generator.js";
+import Missile from "./classes/missile.js";
+import Meteor from "./classes/meteor.js";
+import Generator from "./classes/generator.js";
 
 runOnStartup(async runtime =>
 {

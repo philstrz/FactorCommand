@@ -153,30 +153,6 @@
 					"script-info": {
 						"purpose": "imports-for-events"
 					}
-				},
-				{
-					"name": "missile.js",
-					"type": "application/javascript",
-					"sid": 866006197947427,
-					"script-info": {
-						"purpose": "none"
-					}
-				},
-				{
-					"name": "meteor.js",
-					"type": "application/javascript",
-					"sid": 930477250601172,
-					"script-info": {
-						"purpose": "none"
-					}
-				},
-				{
-					"name": "generator.js",
-					"type": "application/javascript",
-					"sid": 417861684041058,
-					"script-info": {
-						"purpose": "none"
-					}
 				}
 			],
 			"subfolders": [
@@ -233,6 +209,44 @@
 					],
 					"subfolders": [],
 					"name": "utilities"
+				},
+				{
+					"items": [
+						{
+							"name": "blastRadius.js",
+							"type": "application/javascript",
+							"sid": 925274238812713,
+							"script-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "missile.js",
+							"type": "application/javascript",
+							"sid": 866006197947427,
+							"script-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "meteor.js",
+							"type": "application/javascript",
+							"sid": 930477250601172,
+							"script-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "generator.js",
+							"type": "application/javascript",
+							"sid": 417861684041058,
+							"script-info": {
+								"purpose": "none"
+							}
+						}
+					],
+					"subfolders": [],
+					"name": "classes"
 				}
 			]
 		},

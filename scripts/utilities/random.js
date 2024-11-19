@@ -1,7 +1,7 @@
-
-
 export default class Random
 {
+
+	// Choose n elements out of an array, with or without replacement (w/o by default)
 	static choose(array, n=1, replacement=false)
 	{
 		// Check for errors

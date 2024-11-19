@@ -1,4 +1,4 @@
-import Vector from "./utilities/vector.js";
+import Vector from "../utilities/vector.js";
 
 const squareTriggerRange = 50;
 const speed = 1000;
@@ -37,7 +37,7 @@ export default class Missile extends globalThis.InstanceType.Missile
 	// Within range of target, detonate
 	explode()
 	{
-		console.log("boom");
+		this.runtime.objects.BlastRadius.createInstance("Explosions", this.x, this.y);
 		this.target.destroy();
 		this.destroy();
 	}
