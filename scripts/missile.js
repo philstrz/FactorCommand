@@ -1,7 +1,7 @@
 import Vector from "./utilities/vector.js";
 
 const squareTriggerRange = 50;
-const speed = 200;
+const speed = 1000;
 
 export default class Missile extends globalThis.InstanceType.Missile
 {

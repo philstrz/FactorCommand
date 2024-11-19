@@ -1,5 +1,6 @@
 import enumerated from "./utilities/enum.js";
 import Random from "./utilities/random.js";
+import {Dimensions} from "./globals.js";
 
 let runtime = null;
 
@@ -87,11 +88,9 @@ export default class Generator
 	// Launch a meteor
 	launch()
 	{
-		console.log("meteor!");
-		
 		// Start meteor anywhere along top
-		const x = 170 + Math.random() * 300;
-		const y = 100;
+		const x = Dimensions.meteors.left + Math.random() * (Dimensions.meteors.right - Dimensions.meteors.left);
+		const y = 0;
 		
 		// Point meteor at the bottom
 		const t = 170 + Math.random() * 300;

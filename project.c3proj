@@ -71,7 +71,8 @@
 			"Camera",
 			"Missile",
 			"Target",
-			"Meteor"
+			"Meteor",
+			"BlastRadius"
 		],
 		"subfolders": [
 			{
@@ -357,11 +358,11 @@
 		"authorEmail": "philstrz@gmail.com",
 		"authorWebsite": "https://phlp.itch.io/",
 		"appId": "",
-		"pixelRounding": true,
+		"pixelRounding": false,
 		"zAxisScale": "regular",
 		"fov": 0.7853981633974483,
 		"useLoaderLayout": true,
-		"fullscreenMode": "letterbox-integer-scale",
+		"fullscreenMode": "letterbox-scale",
 		"fullscreenQuality": "low",
 		"viewportFit": "auto",
 		"backgroundColor": [
@@ -403,7 +404,7 @@
 		"exportFileStructure": "folders",
 		"uidAllocationMode": "increment"
 	},
-	"viewportWidth": 320,
-	"viewportHeight": 200,
+	"viewportWidth": 4096,
+	"viewportHeight": 2560,
 	"firstLayout": "Layout"
 }

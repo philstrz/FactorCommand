@@ -1,4 +1,4 @@
-import Globals from "./globals.js";
+import {Dimensions} from "./globals.js";
 import Missile from "./missile.js";
 import Meteor from "./meteor.js";
 import Generator from "./generator.js";
@@ -11,8 +11,8 @@ runOnStartup(async runtime =>
 	runtime.addEventListener("beforeprojectstart", () => onBeforeProjectStart(runtime));
 	
 	// Add viewport dimensions to globals
-	Globals.viewport.width = runtime.viewportWidth;
-	Globals.viewport.height = runtime.viewportHeight;
+	Dimensions.viewport.width = runtime.viewportWidth;
+	Dimensions.viewport.height = runtime.viewportHeight;
 	
 	// Stop the browser from scrolling away
 	window.addEventListener("keydown", function(e) { if(["Space","ArrowUp","ArrowDown","ArrowLeft","ArrowRight"].indexOf(e.code) > -1) { e.preventDefault(); } }, false); 
@@ -98,7 +98,8 @@ function onKeyDown(e, runtime)
 }
 
 function launchMissile(runtime, x, y)
-{
-	const missile = runtime.objects.Missile.createInstance("Player", 320, 280);
+{	
+	const launcher = runtime.objects.Launcher.getFirstInstance();
+	const missile = runtime.objects.Missile.createInstance("Player", launcher.x, launcher.y);
 	missile.setTarget(x, y);
 }
