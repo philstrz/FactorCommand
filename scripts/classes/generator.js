@@ -96,19 +96,16 @@ export default class Generator
 		// Point meteor at the bottom
 		const t = Dimensions.meteors.left + Math.random() * (Dimensions.meteors.right - Dimensions.meteors.left);
 		let theta = Math.atan2( Dimensions.meteors.bottom - Dimensions.meteors.top, t - x );
-		console.log(theta * 180 / Math.PI);
 		
 		// Restrict theta within +/- 30 deg
 		theta = theta < (Math.PI / 3) ? Math.PI / 3 : theta;
 		theta = theta > (2 * Math.PI / 3) ? (2 * Math.PI) / 3 : theta;
 		
-		console.log(theta * 180 / Math.PI);
-		
 		// Pick a number based on available factors
 		const number = Random.choose(numbers, 1);
 		
 		// Create and set the meteor
-		const meteor = runtime.objects.Meteor.createInstance("Meteors", x, y);
+		const meteor = runtime.objects.Meteor.createInstance("Meteors", x, y, true);
 		meteor.Theta = theta;
 		meteor.Number = number;
 		

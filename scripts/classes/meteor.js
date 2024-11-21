@@ -1,7 +1,7 @@
 const baseSpeed = 100;
 
 // Get an array of the factors of a number, excluding 1 and n
-function factors(n)
+function factor(n)
 {
 	const f = [];
 	
@@ -34,9 +34,13 @@ export default class Meteor extends globalThis.InstanceType.Meteor
 	set Number(n)
 	{
 		this.number = n;
-		this.factors =  factors(n);
+		this.factors =  factor(n);
+		console.log(this.factors);
 		
 		this.speed = baseSpeed / this.factors.length;
+		
+		const sf = this.getChildAt(0);
+		sf.text = String(n);
 	}
 	
 	set Theta(angle)
@@ -51,5 +55,21 @@ export default class Meteor extends globalThis.InstanceType.Meteor
 	{
 		this.x += this.dx * this.runtime.dt * this.speed;
 		this.y += this.dy * this.runtime.dt * this.speed;
+	}
+	
+	// Receive factor "damage"
+	hit(n)
+	{
+		// Ignore hits of the same size as this
+		if (n === this.number) return;
+		
+		// If the factor divides, divide
+		if (this.number % n === 0)
+		{
+			const divided = this.number / n;
+			const factors = factor(divided);
+			
+			// WIP
+		}
 	}
 }

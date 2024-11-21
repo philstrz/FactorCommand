@@ -37,7 +37,9 @@ export default class Missile extends globalThis.InstanceType.Missile
 	// Within range of target, detonate
 	explode()
 	{
-		this.runtime.objects.BlastRadius.createInstance("Explosions", this.x, this.y);
+		const blast = this.runtime.objects.BlastRadius.createInstance("Explosions", this.x, this.y, true);
+		blast.Factor = this.factor;
+		
 		this.target.destroy();
 		this.destroy();
 	}

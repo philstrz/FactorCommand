@@ -2,6 +2,7 @@ import {Dimensions} from "./globals.js";
 import Missile from "./classes/missile.js";
 import Meteor from "./classes/meteor.js";
 import Generator from "./classes/generator.js";
+import BlastRadius from "./classes/blastRadius.js";
 
 runOnStartup(async runtime =>
 {
@@ -20,6 +21,7 @@ runOnStartup(async runtime =>
 	// Set custom classes for objects
 	runtime.objects.Missile.setInstanceClass(Missile);
 	runtime.objects.Meteor.setInstanceClass(Meteor);
+	runtime.objects.BlastRadius.setInstanceClass(BlastRadius);
 });
 
 async function onBeforeProjectStart(runtime)
@@ -60,6 +62,11 @@ function tick(runtime)
 		missile.update();
 	}
 	
+	for (const blast of runtime.objects.BlastRadius.getAllInstances())
+	{
+		blast.update();
+	}
+	
 	for (const meteor of runtime.objects.Meteor.getAllInstances())
 	{
 		meteor.update();
@@ -69,6 +76,7 @@ function tick(runtime)
 	{
 		generator.update();
 	}
+	
 }
 
 // Before the layout starts
