@@ -62,6 +62,7 @@ export default class Meteor extends globalThis.InstanceType.Meteor
 	{
 		// Ignore hits of the same size as this
 		if (n === this.number) return;
+		if (n === 1) return;
 		
 		// If the factor divides, divide
 		if (this.number % n === 0)
@@ -70,6 +71,11 @@ export default class Meteor extends globalThis.InstanceType.Meteor
 			const factors = factor(divided);
 			
 			// WIP
+			if (factors.length > 1)
+			{
+				const meteor = this.runtime.objects.Meteor.createInstance("Meteors", this.x, this.y, true);
+			}
+			this.destroy();
 		}
 	}
 }

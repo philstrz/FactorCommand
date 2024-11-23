@@ -4,7 +4,7 @@ import {Dimensions} from "../globals.js";
 
 let runtime = null;
 
-let wave = 0;
+let wave = 1;
 let numbers = [];
 
 const State = enumerated([

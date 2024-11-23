@@ -33,7 +33,7 @@ export default class BlastRadius extends globalThis.InstanceType.BlastRadius
 		{
 			if (this.meteorUIDs.includes(meteor.uid) && this.runtime.collisions.testOverlap(this, meteor))
 			{
-				console.log(meteor);
+				meteor.hit(this.factor);
 			}
 		}
 	}
