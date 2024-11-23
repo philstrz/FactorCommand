@@ -47,6 +47,7 @@ async function onBeforeProjectStart(runtime)
 	}
 	
 	// Handle mouse input
+	runtime.addEventListener("wheel", e => onWheel(e, runtime));
 	runtime.addEventListener("pointerdown", () => onPointerDown(runtime));
 	runtime.mouse.setCursorStyle("crosshair");
 	
@@ -105,9 +106,29 @@ function onKeyDown(e, runtime)
 	console.log(e.code, e.key);
 }
 
+let factor = 2;
+let minFactor = 2;
+let maxFactor = 4;
+function onWheel(e, runtime)
+{	
+	if (e.deltaY < 0)
+	{
+		factor = factor >= maxFactor ? minFactor : factor + 1;
+	}
+	
+	if (e.deltaY > 0)
+	{
+		factor = factor <= minFactor ? maxFactor : factor - 1;
+	}
+	console.log(factor);
+	runtime.objects.LauncherNumber.getFirstInstance().text = String(factor);
+	
+}
+
 function launchMissile(runtime, x, y)
 {	
 	const launcher = runtime.objects.Launcher.getFirstInstance();
-	const missile = runtime.objects.Missile.createInstance("Player", launcher.x, launcher.y);
-	missile.setTarget(x, y);
+	const missile = runtime.objects.Missile.createInstance("Player", launcher.x, launcher.y, true);
+	missile.Target = {x: x, y: y};
+	missile.Factor = factor;
 }

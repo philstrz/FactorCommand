@@ -81,7 +81,9 @@
 			"Meteor",
 			"BlastRadius",
 			"BlastNumber",
-			"MeteorNumber"
+			"MeteorNumber",
+			"MissileNumber",
+			"LauncherNumber"
 		],
 		"subfolders": [
 			{

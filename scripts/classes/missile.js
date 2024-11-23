@@ -13,9 +13,15 @@ export default class Missile extends globalThis.InstanceType.Missile
 		super();
 	}
 	
-	setTarget(x, y)
+	set Target(pos)
 	{
-		this.target = this.runtime.objects.Target.createInstance("Player", x, y);
+		this.target = this.runtime.objects.Target.createInstance("Player", pos.x, pos.y);
+	}
+	
+	set Factor(n)
+	{
+		this.factor = n;
+		this.getChildAt(0).text = String(n);
 	}
 	
 	// Every tick, move the missile until it reaches its target
