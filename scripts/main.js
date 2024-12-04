@@ -1,8 +1,10 @@
-import {Dimensions} from "./globals.js";
+import {Dimensions, Singletons} from "./globals.js";
 import Missile from "./classes/missile.js";
 import Meteor from "./classes/meteor.js";
 import Generator from "./classes/generator.js";
 import BlastRadius from "./classes/blastRadius.js";
+import Launcher from "./classes/launcher.js";
+import Input from "./classes/input.js";
 
 runOnStartup(async runtime =>
 {
@@ -22,6 +24,11 @@ runOnStartup(async runtime =>
 	runtime.objects.Missile.setInstanceClass(Missile);
 	runtime.objects.Meteor.setInstanceClass(Meteor);
 	runtime.objects.BlastRadius.setInstanceClass(BlastRadius);
+	runtime.objects.Launcher.setInstanceClass(Launcher);
+	
+	// Set singletons
+	Singletons.runtime = runtime;
+	Singletons.input = new Input(runtime);
 });
 
 async function onBeforeProjectStart(runtime)
@@ -47,12 +54,20 @@ async function onBeforeProjectStart(runtime)
 	}
 	
 	// Handle mouse input
-	runtime.addEventListener("wheel", e => onWheel(e, runtime));
-	runtime.addEventListener("pointerdown", () => onPointerDown(runtime));
+	runtime.addEventListener("wheel", e => Singletons.input.wheel(e));
+	
+	//runtime.addEventListener("wheel", e => onWheel(e, runtime));
+	//runtime.addEventListener("pointerdown", () => onPointerDown(runtime));
+	
+	runtime.addEventListener("pointerdown", () => Singletons.input.pointer(true));
+	runtime.addEventListener("pointerup", () => Singletons.input.pointer(false));
+	
 	runtime.mouse.setCursorStyle("crosshair");
 	
 	// Handle keyboard input
 	runtime.addEventListener("keydown", e => onKeyDown(e, runtime));
+	
+	// WIP
 }
 
 // Every tick
@@ -73,10 +88,11 @@ function tick(runtime)
 		meteor.update();
 	}
 	
-	if (generator)
-	{
-		generator.update();
-	}
+	if (launcher) launcher.update();
+	
+	if (generator) generator.update();
+	
+	if (input) input.clear();
 	
 }
 
@@ -88,10 +104,17 @@ function onBeforeLayoutStart(runtime)
 
 // When layout starts
 let generator = null;
+let launcher = null;
+let input = null;
 function onLayoutStart(runtime)
 {
+	launcher = runtime.objects.Launcher.getFirstInstance();
+
 	generator = new Generator(runtime);
 	generator.nextWave();
+	
+	input = Singletons.input;
+	
 }
 
 function onPointerDown(runtime)

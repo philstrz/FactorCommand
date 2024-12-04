@@ -262,6 +262,14 @@
 							"script-info": {
 								"purpose": "none"
 							}
+						},
+						{
+							"name": "input.js",
+							"type": "application/javascript",
+							"sid": 961379816234256,
+							"script-info": {
+								"purpose": "none"
+							}
 						}
 					],
 					"subfolders": [],

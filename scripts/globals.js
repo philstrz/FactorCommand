@@ -1,3 +1,5 @@
+import Input from "./classes/input.js";
+
 /* 
 Define global variables to be accessed across the game
 */
@@ -15,3 +17,8 @@ export const Dimensions = {
 		bottom: 2560,
 	}
 };
+
+export const Singletons = {
+	input: null,
+	runtime: null,
+}
