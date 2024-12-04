@@ -13,10 +13,13 @@ let scroll = 0;
 
 export default class Input
 {
+
 	constructor(rt)
 	{
 		if (!runtime) runtime = rt;
 		if (!singleton) singleton = this;
+		
+		return singleton;
 	}
 	
 	// Clear all input from previous frame

@@ -5,6 +5,7 @@ import Generator from "./classes/generator.js";
 import BlastRadius from "./classes/blastRadius.js";
 import Launcher from "./classes/launcher.js";
 import Input from "./classes/input.js";
+import Camera from "./classes/camera.js";
 
 runOnStartup(async runtime =>
 {
@@ -25,6 +26,7 @@ runOnStartup(async runtime =>
 	runtime.objects.Meteor.setInstanceClass(Meteor);
 	runtime.objects.BlastRadius.setInstanceClass(BlastRadius);
 	runtime.objects.Launcher.setInstanceClass(Launcher);
+	runtime.objects.Camera.setInstanceClass(Camera);
 	
 	// Set singletons
 	Singletons.runtime = runtime;

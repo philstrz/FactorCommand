@@ -216,6 +216,14 @@
 							"script-info": {
 								"purpose": "none"
 							}
+						},
+						{
+							"name": "messenger.js",
+							"type": "application/javascript",
+							"sid": 541715149436863,
+							"script-info": {
+								"purpose": "none"
+							}
 						}
 					],
 					"subfolders": [],
@@ -267,6 +275,14 @@
 							"name": "input.js",
 							"type": "application/javascript",
 							"sid": 961379816234256,
+							"script-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "camera.js",
+							"type": "application/javascript",
+							"sid": 771587893678160,
 							"script-info": {
 								"purpose": "none"
 							}
