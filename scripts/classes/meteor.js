@@ -35,7 +35,6 @@ export default class Meteor extends globalThis.InstanceType.Meteor
 	{
 		this.number = n;
 		this.factors =  factor(n);
-		console.log(this.factors);
 		
 		this.speed = baseSpeed / this.factors.length;
 		

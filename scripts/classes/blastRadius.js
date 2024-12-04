@@ -22,8 +22,6 @@ export default class BlastRadius extends globalThis.InstanceType.BlastRadius
 		
 		const sf = this.getChildAt(0);
 		sf.text = String(n);
-		
-		console.log(sf);
 	}
 	
 	// Check for meteor collisions

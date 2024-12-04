@@ -254,6 +254,14 @@
 							"script-info": {
 								"purpose": "none"
 							}
+						},
+						{
+							"name": "launcher.js",
+							"type": "application/javascript",
+							"sid": 484415383688264,
+							"script-info": {
+								"purpose": "none"
+							}
 						}
 					],
 					"subfolders": [],
