@@ -22,6 +22,8 @@ export default class Launcher extends globalThis.InstanceType.Launcher
 	// Read inputs and respond accordingly
 	update()
 	{
+		
+	
 		if (input.Wheel)
 		{
 			factor = factor + input.Wheel;
@@ -33,5 +35,18 @@ export default class Launcher extends globalThis.InstanceType.Launcher
 		
 		if (input.LMB.click) console.log("click");
 		if (input.LMB.down) console.log("down");
+		
+		if (input.LMB.click) 
+		{
+			const [x, y] = this.runtime.mouse.getMousePosition(1);
+			this.launch(x, y);
+		}
+	}
+	
+	launch(x, y)
+	{
+		const missile = this.runtime.objects.Missile.createInstance("Player", this.x, this.y, true);
+		missile.Target = {x: x, y: y};
+		missile.Factor = factor;
 	}
 }

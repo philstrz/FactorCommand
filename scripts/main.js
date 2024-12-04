@@ -147,11 +147,3 @@ function onWheel(e, runtime)
 	runtime.objects.LauncherNumber.getFirstInstance().text = String(factor);
 	
 }
-
-function launchMissile(runtime, x, y)
-{	
-	const launcher = runtime.objects.Launcher.getFirstInstance();
-	const missile = runtime.objects.Missile.createInstance("Player", launcher.x, launcher.y, true);
-	missile.Target = {x: x, y: y};
-	missile.Factor = factor;
-}
