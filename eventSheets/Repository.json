@@ -1,0 +1,31 @@
+{
+	"name": "Repository",
+	"events": [
+		{
+			"eventType": "comment",
+			"text": "Go to level layout instead"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 771871898040189
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 503024739756900,
+					"parameters": {
+						"layout": "Layout"
+					}
+				}
+			],
+			"sid": 355673072052749
+		}
+	],
+	"sid": 217095853502729
+}

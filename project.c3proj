@@ -134,7 +134,8 @@
 		"items": [
 			"Loader",
 			"Event sheet",
-			"Title"
+			"Title",
+			"Repository"
 		],
 		"subfolders": []
 	},
