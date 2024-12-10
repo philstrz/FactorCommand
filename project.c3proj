@@ -31,7 +31,24 @@
 	},
 	"rootFileFolders": {
 		"script": {
-			"items": [],
+			"items": [
+				{
+					"name": "main.js",
+					"type": "application/javascript",
+					"sid": 460862540639264,
+					"script-info": {
+						"purpose": "main"
+					}
+				},
+				{
+					"name": "customClasses.js",
+					"type": "application/javascript",
+					"sid": 521056746479733,
+					"script-info": {
+						"purpose": "none"
+					}
+				}
+			],
 			"subfolders": []
 		},
 		"sound": {
