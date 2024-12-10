@@ -1,119 +1,15 @@
 {
 	"projectFormatVersion": 1,
-	"savedWithRelease": 40702,
-	"name": "FactorCommand",
+	"savedWithRelease": 41602,
+	"name": "Factor Command",
 	"runtime": "c3",
 	"useWorker": "auto",
 	"bundleAddons": false,
-	"usedAddons": [
-		{
-			"type": "plugin",
-			"id": "Audio",
-			"name": "Audio",
-			"author": "Scirra",
-			"bundled": false
-		},
-		{
-			"type": "plugin",
-			"id": "Keyboard",
-			"name": "Keyboard",
-			"author": "Scirra",
-			"bundled": false
-		},
-		{
-			"type": "plugin",
-			"id": "Mouse",
-			"name": "Mouse",
-			"author": "Scirra",
-			"bundled": false
-		},
-		{
-			"type": "plugin",
-			"id": "Sprite",
-			"name": "Sprite",
-			"author": "Scirra",
-			"bundled": false
-		},
-		{
-			"type": "plugin",
-			"id": "Spritefont2",
-			"name": "Sprite font",
-			"author": "Scirra",
-			"bundled": false
-		},
-		{
-			"type": "plugin",
-			"id": "TiledBg",
-			"name": "Tiled Background",
-			"author": "Scirra",
-			"bundled": false
-		},
-		{
-			"type": "plugin",
-			"id": "Touch",
-			"name": "Touch",
-			"author": "Scirra",
-			"bundled": false
-		},
-		{
-			"type": "behavior",
-			"id": "Tween",
-			"name": "Tween",
-			"author": "Scirra",
-			"bundled": false
-		},
-		{
-			"type": "behavior",
-			"id": "scrollto",
-			"name": "Scroll To",
-			"author": "Scirra",
-			"bundled": false
-		}
-	],
-	"uniqueId": "7b2hqbhiwmp",
+	"usedAddons": [],
+	"uniqueId": "aaw1i891j86",
 	"objectTypes": {
-		"items": [
-			"Audio",
-			"Launcher",
-			"Camera",
-			"Missile",
-			"Target",
-			"Meteor",
-			"BlastRadius",
-			"BlastNumber",
-			"MeteorNumber",
-			"MissileNumber",
-			"LauncherNumber"
-		],
-		"subfolders": [
-			{
-				"items": [
-					"Sprite",
-					"TiledBackground"
-				],
-				"subfolders": [],
-				"name": "Logo"
-			},
-			{
-				"items": [
-					"Keyboard",
-					"Mouse",
-					"Touch"
-				],
-				"subfolders": [],
-				"name": "Input"
-			},
-			{
-				"items": [
-					"Shadow",
-					"ShadowEffect",
-					"Title",
-					"TitleEffect"
-				],
-				"subfolders": [],
-				"name": "Title"
-			}
-		]
+		"items": [],
+		"subfolders": []
 	},
 	"autosaveData": null,
 	"containers": [],
@@ -123,188 +19,23 @@
 	},
 	"layouts": {
 		"items": [
-			"Loader",
-			"Layout",
-			"Title",
-			"Repository"
+			"Game"
 		],
 		"subfolders": []
 	},
 	"eventSheets": {
 		"items": [
-			"Loader",
-			"Event sheet",
-			"Title",
-			"Repository"
+			"Game"
 		],
 		"subfolders": []
 	},
 	"rootFileFolders": {
 		"script": {
-			"items": [
-				{
-					"name": "main.js",
-					"type": "application/javascript",
-					"sid": 347930634389160,
-					"script-info": {
-						"purpose": "main"
-					}
-				},
-				{
-					"name": "globals.js",
-					"type": "application/javascript",
-					"sid": 234963602889101,
-					"script-info": {
-						"purpose": "none"
-					}
-				},
-				{
-					"name": "importsForEvents.js",
-					"type": "application/javascript",
-					"sid": 748630613865371,
-					"script-info": {
-						"purpose": "imports-for-events"
-					}
-				}
-			],
-			"subfolders": [
-				{
-					"items": [
-						{
-							"name": "ease.js",
-							"type": "application/javascript",
-							"sid": 770083036554432,
-							"script-info": {
-								"purpose": "none"
-							}
-						},
-						{
-							"name": "coroutine.js",
-							"type": "application/javascript",
-							"sid": 861376880323062,
-							"script-info": {
-								"purpose": "none"
-							}
-						},
-						{
-							"name": "audioManager.js",
-							"type": "application/javascript",
-							"sid": 636519227842261,
-							"script-info": {
-								"purpose": "none"
-							}
-						},
-						{
-							"name": "vector.js",
-							"type": "application/javascript",
-							"sid": 107545955068197,
-							"script-info": {
-								"purpose": "none"
-							}
-						},
-						{
-							"name": "enum.js",
-							"type": "application/javascript",
-							"sid": 700199807267574,
-							"script-info": {
-								"purpose": "none"
-							}
-						},
-						{
-							"name": "random.js",
-							"type": "application/javascript",
-							"sid": 935267635027168,
-							"script-info": {
-								"purpose": "none"
-							}
-						},
-						{
-							"name": "messenger.js",
-							"type": "application/javascript",
-							"sid": 541715149436863,
-							"script-info": {
-								"purpose": "none"
-							}
-						}
-					],
-					"subfolders": [],
-					"name": "utilities"
-				},
-				{
-					"items": [
-						{
-							"name": "blastRadius.js",
-							"type": "application/javascript",
-							"sid": 925274238812713,
-							"script-info": {
-								"purpose": "none"
-							}
-						},
-						{
-							"name": "missile.js",
-							"type": "application/javascript",
-							"sid": 866006197947427,
-							"script-info": {
-								"purpose": "none"
-							}
-						},
-						{
-							"name": "meteor.js",
-							"type": "application/javascript",
-							"sid": 930477250601172,
-							"script-info": {
-								"purpose": "none"
-							}
-						},
-						{
-							"name": "generator.js",
-							"type": "application/javascript",
-							"sid": 417861684041058,
-							"script-info": {
-								"purpose": "none"
-							}
-						},
-						{
-							"name": "launcher.js",
-							"type": "application/javascript",
-							"sid": 484415383688264,
-							"script-info": {
-								"purpose": "none"
-							}
-						},
-						{
-							"name": "input.js",
-							"type": "application/javascript",
-							"sid": 961379816234256,
-							"script-info": {
-								"purpose": "none"
-							}
-						},
-						{
-							"name": "camera.js",
-							"type": "application/javascript",
-							"sid": 771587893678160,
-							"script-info": {
-								"purpose": "none"
-							}
-						}
-					],
-					"subfolders": [],
-					"name": "classes"
-				}
-			]
+			"items": [],
+			"subfolders": []
 		},
 		"sound": {
-			"items": [
-				{
-					"name": "logo.webm",
-					"type": "audio/webm; codecs=opus",
-					"sid": 472136908572524,
-					"file-info": {
-						"purpose": "none"
-					}
-				}
-			],
+			"items": [],
 			"subfolders": []
 		},
 		"music": {
@@ -316,16 +47,7 @@
 			"subfolders": []
 		},
 		"font": {
-			"items": [
-				{
-					"name": "dnf-paste-by-DerpyNinjaFrog.ttf",
-					"type": "application/font-sfnt",
-					"sid": 238754968742981,
-					"file-info": {
-						"purpose": "none"
-					}
-				}
-			],
+			"items": [],
 			"subfolders": []
 		},
 		"icon": {
@@ -333,7 +55,7 @@
 				{
 					"name": "icon-16.png",
 					"type": "image/png",
-					"sid": 649615093086128,
+					"sid": 220847915828233,
 					"icon-info": {
 						"purpose": "app-icon"
 					}
@@ -341,7 +63,7 @@
 				{
 					"name": "icon-32.png",
 					"type": "image/png",
-					"sid": 579432242257624,
+					"sid": 676535256658273,
 					"icon-info": {
 						"purpose": "app-icon"
 					}
@@ -349,7 +71,7 @@
 				{
 					"name": "icon-64.png",
 					"type": "image/png",
-					"sid": 419932561612715,
+					"sid": 165809723677166,
 					"icon-info": {
 						"purpose": "app-icon"
 					}
@@ -357,7 +79,7 @@
 				{
 					"name": "icon-128.png",
 					"type": "image/png",
-					"sid": 675625073383558,
+					"sid": 161941286333769,
 					"icon-info": {
 						"purpose": "app-icon"
 					}
@@ -365,7 +87,7 @@
 				{
 					"name": "icon-256.png",
 					"type": "image/png",
-					"sid": 273505302394541,
+					"sid": 869806448426143,
 					"icon-info": {
 						"purpose": "app-icon"
 					}
@@ -373,7 +95,7 @@
 				{
 					"name": "icon-512.png",
 					"type": "image/png",
-					"sid": 451380259370067,
+					"sid": 979491574476228,
 					"icon-info": {
 						"purpose": "app-icon"
 					}
@@ -381,7 +103,7 @@
 				{
 					"name": "loading-logo.png",
 					"type": "image/png",
-					"sid": 166842472476164,
+					"sid": 201203145111383,
 					"icon-info": {
 						"purpose": "loading-logo"
 					}
@@ -406,22 +128,24 @@
 		]
 	},
 	"flowcharts": {
-		"items": [],
+		"items": [
+			"Flowchart 1"
+		],
 		"subfolders": []
 	},
 	"properties": {
 		"description": "",
 		"version": "1.0.0.0",
 		"author": "phlp",
-		"authorEmail": "philstrz@gmail.com",
-		"authorWebsite": "https://phlp.itch.io/",
+		"authorEmail": "phlp@phlp.dev",
+		"authorWebsite": "https://phlp.dev/",
 		"appId": "",
 		"pixelRounding": false,
-		"zAxisScale": "regular",
+		"zAxisScale": "normalized",
 		"fov": 0.7853981633974483,
-		"useLoaderLayout": true,
+		"useLoaderLayout": false,
 		"fullscreenMode": "letterbox-scale",
-		"fullscreenQuality": "low",
+		"fullscreenQuality": "high",
 		"viewportFit": "auto",
 		"backgroundColor": [
 			0,
@@ -447,22 +171,21 @@
 		"gpuPreference": "high-performance",
 		"scriptsType": "module",
 		"framerateMode": "vsync",
-		"sampling": "nearest",
+		"sampling": "trilinear",
 		"downscaling": "medium",
 		"renderingMode": "auto",
 		"anisotropicFiltering": "auto",
 		"zNear": 1,
 		"zFar": 10000,
 		"maxSpriteSheetSize": 2048,
-		"loaderStyle": "none",
+		"loaderStyle": "splash",
 		"preloadSounds": true,
 		"cordovaiOSScheme": "app",
 		"cordovaAndroidScheme": "https",
-		"autoReloadScriptsOnPreview": false,
 		"exportFileStructure": "folders",
 		"uidAllocationMode": "increment"
 	},
 	"viewportWidth": 4096,
 	"viewportHeight": 2560,
-	"firstLayout": "Layout"
+	"firstLayout": "Game"
 }
